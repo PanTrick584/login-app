@@ -1,6 +1,6 @@
 const data = {
     user1: {
-        name: 'Andrzej',
+        login: 'Andrzej',
         password: 'LubiePlacki11',
         messege: "Witaj ",
     },
@@ -12,6 +12,13 @@ const data = {
         name: 'Janusz',
         password: "Haslo1234"
     }
+}
+
+const checkLogin = () => {
+    const valueLogin = document.querySelector('.login').value;
+    valueLogin === `${data.user1.login}`
+    ? showStatus() : console.log('Login nieprawidłowy');
+    console.log(valueLogin)
 }
 
 const checkPassword = () => {
