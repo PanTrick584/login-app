@@ -1,38 +1,65 @@
 const data = {
-    user1: {
-        login: 'Andrzej',
+    Andrzej: {
         password: 'LubiePlacki11',
-        messege: "Witaj ",
+        age: 76,
+        adress: "Żagań"
     },
-    user2: {
-        name: 'Grzegorz',
-        password: 'DoktorCyckarz69'
+    Grzegorz: {
+        password: 'DoktorCyckarz69',
+        age: 36,
+        adress: "Lublin albo Dublin"
     },
     user3: {
-        name: 'Janusz',
-        password: "Haslo1234"
-    }
+        password: "Haslo1234",
+        age: "none",
+        adress: "Internet"
+    },
+    Wacław: {
+        password: 'dupadupadupa666',
+        age: 12,
+        adress: 'Stummilowy Las'
+    },
+
+    messege: "Witaj "
 }
+
 
 const checkLogin = () => {
     const valueLogin = document.querySelector('.login').value;
-    valueLogin === `${data.user1.login}`
-    ? showStatus() : console.log('Login nieprawidłowy');
-    console.log(valueLogin)
+    Object.keys(data).forEach(user => {
+        
+        let name = user
+        Object.keys(name).forEach(pass => {
+
+        })
+        console.log(data.name)  
+        console.log(typeof name) 
+        valueLogin === name
+        ? showStatus(valueLogin) : console.log('Login nieprawidłowy');
+            // console.log(valueLogin)
+           
+         return name
+        
+    }) 
 }
 
-const checkPassword = () => {
-    const valuePassword = document.querySelector('.password').value;
-    valuePassword === `${data.user1.password}`
-     ? showStatus() : console.log('Hasło nieprawidłowe');
-     console.log(valuePassword);
-}
+// const checkPassword = (n) => {
+//     const valuePassword = document.querySelector('.password').value;
+//         console.log(n.password)
+//     // valuePassword === `${data.user1.password}`
+//     //  ? showStatus(valuePassword) : console.log('Hasło nieprawidłowe');
+//     //  console.log(valuePassword);
+// }
 
 
-const showStatus = () => {
-    const status = '! You were logget into your account. What do you want to check?';
-    console.log(`${data.user1.messege} ${data.user1.name} ${status}`);
-    // const uiPanelHide = document.querySelector('.uiPanelShow').className = 'uiPanelHide';
-    // const userPanelShow = document.querySelector('.userPanelHide').className = 'userPanelShow';
+
+const loggedIn = () => {
+    
     window.location.href = "dist/userAccount/userAccount.html"
+}
+
+const showStatus = (valueP, valueL) => {
+    const status = '! Whait a moment...';
+    console.log(`${data.messege} ${name} ${status}`);
+    valueP && valueL ?  loggedIn() : "";
 }
