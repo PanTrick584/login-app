@@ -15,37 +15,74 @@
         <section>
             <div class="buttonContainer" >
                 <div >
-                    <button class="buttonSignLog" >
+                    <button onclick="uiSignUpPanelShow()" class="buttonSignLog" >
                         <h1>Sign Up!</h1>
                         <p>For more info of our products Sign in to your account.</p>
                     </button>
                 </div>
-                <button class="buttonSignLog" >
+                <button onclick="uiLogInPanelShow()" class="buttonLogIn" >
                     <h1>Log In!</h1>
                     <p>If you haven't one yet, check out for log in to check our offer and stay together longer</p>
                 </button>
             </div>
+            
         </section>
 
         <section>
-            <div class="uiPanelShow">
-                <div class="loginContainer" >
-                    <div class="loginText" >LOGIN :</div>
-                    <input class="login" />
+            <div class="uiPanel">
+
+                <div class='uiSignUpPanelHide'>
+                    <div class="uiSignUp" >
+                        <input value="Nick Name" onclick="inputChange()"></input>
+                        <input value="Email" onclick="inputChange()"></input>
+                        <input value="Password"></input>
+                        <input value="Password Werify"></input>
+                        <input value="Country"></input>
+                        <input value="Gender"></input>
+                        <input value="Age"></input>
+                        <input value="Reptilian Parents"></input>
+                        <button class="loginButton" onclick="checkLogin()">Sign Up!</button>
+                    </div>
                 </div>
-                <div class="passwordContainer" >
-                    <div class="passwordText" >Hasło:</div>
-                    <input class='password' tyle="text" />
+            <div class='uiLogInPanelHide'>
+                <div class="uiLogIn">
+                    <input value="Nick Name"></input>
+                    <input value="Email"></input>
+                    <input value="Password"></input>
+                    <button class="loginButton" onclick="checkLogin()">Log In</button>  
                 </div>
-                <button class="loginButton" onclick="checkLogin()">Log In</button>  
             </div>
-            <!-- <div class="userPanelHide">Account Elements</div> -->
+                   
+            </div>
+
         </section>
         
         
+<!--         
+        <div class="loginContainer" >
+            <div class="loginText" >LOGIN :</div>
+            <input class="login" />
+        </div>
+        <div class="passwordContainer" >
+            <div class="passwordText" >Hasło:</div>
+            <input class='password' tyle="text" />
+        </div> -->
+
+
+
     </main>
 
-    <footer></footer>
+    <footer>
+        <section>
+            <div class="aboutContainer">
+                <h1>About our company:</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, earum quia, velit obcaecati voluptatum incidunt necessitatibus hic aspernatur soluta reiciendis, repudiandae reprehenderit! Saepe, inventore sint consequatur ea quia tenetur adipisci laudantium in alias neque sunt enim ducimus debitis consectetur, perspiciatis, suscipit deleniti earum nobis facere aliquam. Voluptate incidunt praesentium repellendus deleniti animi nostrum consequuntur quo maiores, ullam debitis quam exercitationem, aut autem eligendi nulla est fugit libero excepturi eos? Quis!</p>
+            </div>
+        </section>
+        <section>
+            Fontello Content
+        </section>
+    </footer>
 
 
     <script src="dist/JS/index.js" ></script>

@@ -23,6 +23,41 @@ const data = {
     messege: "Witaj "
 }
 
+// const backgroundGradient = () => {
+//     setTimeout(colorChanger(), 5000)
+// }
+
+// const colorChanger = () => {
+//     let backgroundColor = document.querySelector("body").style.backgroundImage = 'linear-gradient(to right, #996b43, #998574, #d1680d)';
+//     let backgroundColor = document.querySelector("body").style.backgroundImage = 'linear-gradient(to right, #998574, #d1680d, #996b43)';
+//     let backgroundColor = document.querySelector("body").style.backgroundImage = 'linear-gradient(to right, #d1680d, #996b43, #998574)';
+
+
+// } // pomysł na zmienianie tła w gradiencie, dopracować i będzie działaś, jakąś pętlę trzeba zrobić
+
+
+
+let inputChange = () => {
+    let input = document.querySelector('.uiSignUp input');
+    input.className = '.uiSignUp input:focus' ? input.value = "" : input.className = '.uiSignUp input';
+}
+// działa tylko na jednym, pierwszym przycisku, pewnie bierze pierwszy który znajdzie i wykonuje akcje, zrobić tak żeby na tym konkretnym, który jest kliknięty
+
+
+let uiSignUpPanelShow = () => {
+    let buttonSignLog = document.querySelector('.buttonSignLog');
+    let buttonLogIn = document.querySelector('.buttonLogIn')
+    let signUpShow = document.querySelector('.uiSignUpPanelHide');
+    buttonSignLog.addEventListener(onclick) ? 
+    signUpShow.className = '.uiSignUp' : 
+    }
+    let signUpShow = document.querySelector('.uiSignUpPanelHide').className = '.uiSignUp';
+
+}
+
+let uiLogInPanelShow = () => {
+    let logInShow = document.querySelector('.uiLogInPanelHide').className = '.uiLogIn';
+}
 
 const checkLogin = () => {
     const valueLogin = document.querySelector('.login').value;
