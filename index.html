@@ -3,32 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dist/CSS/style.css" />
     <title>Document</title>
 </head>
 <body>
     <header>
-
+        <h1>Welcome</h1>
     </header>
 
     <main>
-        <div class="uiPanelShow">
-            <div class="loginContainer" >
-                <div class="loginText" >LOGIN :</div>
-                <input class="login" />
+        <section>
+            <div class="buttonContainer" >
+                <div >
+                    <button class="buttonSignLog" >
+                        <h1>Sign Up!</h1>
+                        <p>For more info of our products Sign in to your account.</p>
+                    </button>
+                </div>
+                <button class="buttonSignLog" >
+                    <h1>Log In!</h1>
+                    <p>If you haven't one yet, check out for log in to check our offer and stay together longer</p>
+                </button>
             </div>
-            <div class="passwordContainer" >
-                <div class="passwordText" >Hasło:</div>
-                <input class='password' tyle="text" />
+        </section>
+
+        <section>
+            <div class="uiPanelShow">
+                <div class="loginContainer" >
+                    <div class="loginText" >LOGIN :</div>
+                    <input class="login" />
+                </div>
+                <div class="passwordContainer" >
+                    <div class="passwordText" >Hasło:</div>
+                    <input class='password' tyle="text" />
+                </div>
+                <button class="loginButton" onclick="checkLogin()">Log In</button>  
             </div>
-            <button class="loginButton" onclick="checkLogin()">Log In</button>  
-        </fdiv>
-        <!-- <div class="userPanelHide">Account Elements</div> -->
+            <!-- <div class="userPanelHide">Account Elements</div> -->
+        </section>
+        
+        
     </main>
 
     <footer></footer>
 
 
-    <script src="index.js" ></script>
+    <script src="dist/JS/index.js" ></script>
 </body>
 </html>

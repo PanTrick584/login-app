@@ -33,7 +33,8 @@ const checkLogin = () => {
 
         })
         console.log(data.name)  
-        console.log(typeof name) 
+        console.log(typeof name)
+        console.log(name.password)
         valueLogin === name
         ? showStatus(valueLogin) : console.log('Login nieprawidłowy');
             // console.log(valueLogin)

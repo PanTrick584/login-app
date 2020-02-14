@@ -6,13 +6,53 @@ body{
     background-color: #a87132;
 }
 
+/* HEADER */
+
+header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1{
+    font-size: 6rem;
+}
+
+
+header h2{
+    justify-content: center;
+    width: 300px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding:0;
+    margin:0;
+    /* opacity: 0.9; */
+}
+
 /* MAIN */
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
+    margin: 0;
+    width: 100%;
+}
+
+.buttonContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    /* margin: 20px */
+    
+}
+
+.buttonSignLog{
+    width: 250px;
+    height: 200px;
+    padding: 30px;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
 }
 
 /* USER INTERFACE PANEL */
