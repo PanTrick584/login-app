@@ -44,17 +44,25 @@ let inputChange = () => {
 // działa tylko na jednym, pierwszym przycisku, pewnie bierze pierwszy który znajdzie i wykonuje akcje, zrobić tak żeby na tym konkretnym, który jest kliknięty
 
 
+// Menu wyświetlania inputów
 let uiSignUpPanelShow = () => {
     let buttonSignLog = document.querySelector('.buttonSignLog');
     let buttonLogIn = document.querySelector('.buttonLogIn')
-    let signUpShow = document.querySelector('.uiSignUpPanelHide');
-    buttonSignLog.addEventListener(onclick) ? 
-    signUpShow.className = '.uiSignUp' : 
+    let signUpShow = document.querySelector('.uiSignUpPanelHide')
+    let logInShow = document.querySelector('.uiLogInPanelHide')
+
+    let signUpChange = () => {
+        signUpShow.className = '.uiSignUp';
+        console.log(2)
     }
-    let signUpShow = document.querySelector('.uiSignUpPanelHide').className = '.uiSignUp';
-
+    return signUpChange()
 }
+buttonSignLog.addEventListener(onclick, signUpChange(), false)
 
+
+
+
+// This one works but its not enough
 let uiLogInPanelShow = () => {
     let logInShow = document.querySelector('.uiLogInPanelHide').className = '.uiLogIn';
 }
@@ -79,13 +87,13 @@ const checkLogin = () => {
     }) 
 }
 
-// const checkPassword = (n) => {
-//     const valuePassword = document.querySelector('.password').value;
-//         console.log(n.password)
-//     // valuePassword === `${data.user1.password}`
-//     //  ? showStatus(valuePassword) : console.log('Hasło nieprawidłowe');
-//     //  console.log(valuePassword);
-// }
+const checkPassword = (n) => {
+    const valuePassword = document.querySelector('.password').value;
+        console.log(n.password)
+    // valuePassword === `${data.user1.password}`
+    //  ? showStatus(valuePassword) : console.log('Hasło nieprawidłowe');
+    //  console.log(valuePassword);
+}
 
 
 
