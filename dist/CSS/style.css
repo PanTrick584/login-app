@@ -39,7 +39,7 @@ main {
 
 /* Button SignUp */
 
-.buttonSignLog{
+.buttonSignUp{
     width: 250px;
     height: 200px;
     padding: 30px;
@@ -51,14 +51,14 @@ main {
     cursor: pointer;
 }
 
-.buttonSignLog:hover{
+.buttonSignUp:hover{
     background: rgba(255, 124, 110, 0.6);
 }
-.buttonSignLog:focus{
+.buttonSignUp:focus{
     background: rgba(255, 124, 110, 0.2);
 }
 
-.buttonSignLog h1{
+.buttonSignUp h1{
     font-size: 2rem;
 }
 
@@ -114,13 +114,14 @@ main {
     justify-content: center;
     align-items: center;
     padding: 30px;
+    margin: 0 10px;
 
 }
 
-.uiSignUp input{
-    margin: 0 0 15px 0;
+.uiSignUpInput{
+    margin-bottom: 15px;
     border-radius: 25px;
-    padding: 0 30px 0 30px;
+    padding: 0 20px 0 20px;
     background-color: rgba(255, 124, 110, 0.4);
     border: none;
     outline: none;
@@ -130,11 +131,11 @@ main {
     font-size: 1.1rem;
 }
 
-.uiSignUp input:hover{
+.uiSignUpInput:hover{
     background: rgba(255, 124, 110, 0.6);
 }
 
-.uiSignUp input:focus{
+.uiSignUpInput:focus{
     background: rgba(255, 124, 110, 0.2);
     opacity: 1;
 
@@ -155,10 +156,10 @@ main {
 
 }
 
-.uiLogIn input{
-    margin: 0 0 15px 0;
+.uiSignUpInput{
+    margin-bottom: 15px;
     border-radius: 25px;
-    padding: 0 30px 0 30px;
+    padding: 0 20px 0 20px;
     background-color: rgba(255, 124, 110, 0.4);
     border: none;
     outline: none;
@@ -177,13 +178,14 @@ main {
 /* Footer about */
 
 .aboutContainer{
+    margin: 100px 150px 50px 150px;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 
 .aboutContainer p{
-    margin: 0 150px 50px 150px;
+    
 }
 
 

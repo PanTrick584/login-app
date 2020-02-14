@@ -36,64 +36,103 @@ const data = {
 // } // pomysł na zmienianie tła w gradiencie, dopracować i będzie działaś, jakąś pętlę trzeba zrobić
 
 
+// let input = document.querySelectorAll('input');
+// console.log(input)
+const inputs = document.querySelectorAll('input');
+
 
 let inputChange = () => {
-    let input = document.querySelector('.uiSignUp input');
-    input.className = '.uiSignUp input:focus' ? input.value = "" : input.className = '.uiSignUp input';
+    // console.log(input.className)
+    input.className ;
 }
-// działa tylko na jednym, pierwszym przycisku, pewnie bierze pierwszy który znajdzie i wykonuje akcje, zrobić tak żeby na tym konkretnym, który jest kliknięty
+
+const addEventListenerToInputs =(event) => {
+    
+    for (let i = 0, len = inputs.length; i < len; i++) {
+       
+        const input = inputs[i]
+        const prevInputValue = input.value
+        console.log(input)
+        input.addEventListener(event, () => {input.focus ? input.value = "" : console.log('duno?')}, false);
+        // input.addEventListener('mouseout', () => {input.value = "" ? prevInputValue : console.log('cośwymyśle')}, false)
+    }
+
+
+}
+
+addEventListenerToInputs('focus'); 
+
+// all buttons are working, but value of button isn't back so there is empty input if there is no valid value
+
+
+
 
 
 // Menu wyświetlania inputów
-let uiSignUpPanelShow = () => {
-    let buttonSignLog = document.querySelector('.buttonSignLog');
-    let buttonLogIn = document.querySelector('.buttonLogIn')
-    let signUpShow = document.querySelector('.uiSignUpPanelHide')
-    let logInShow = document.querySelector('.uiLogInPanelHide')
+// let buttonSignLog = document.querySelector('.buttonSignLog');
+// let uiSignUpPanelShow = () => {
+    
+//     let buttonLogIn = document.querySelector('.buttonLogIn')
+//     let signUpShow = document.querySelector('.uiSignUpPanelHide')
+//     let logInShow = document.querySelector('.uiLogInPanelHide')
 
-    let signUpChange = () => {
-        signUpShow.className = '.uiSignUp';
-        console.log(2)
-    }
-    return signUpChange()
-}
-buttonSignLog.addEventListener(onclick, signUpChange(), false)
+//     let signUpChange = () => {
+//         signUpShow.className = '.uiSignUp';
+//         console.log(2)
+//     }
+//     return signUpChange()
+// }
+// buttonSignLog.addEventListener(onclick, signUpChange(), false)
 
 
-
+// const inputValueChange = () => {
+//     let inputs = document.querySelectorAll('input').forEach(inp = () => {
+    
+//         let input = inp;
+//         input.value = '';
+//         console.log(input)
+//         return input
+    
+//     })
+// input.addEventListener("click", inputs(), false);
+// }
 
 // This one works but its not enough
+
+let uiSignUpPanelShow = () => {
+    let signUpSow = document.querySelector('.uiSignUpPanelHide').className = '.uiSignUp';
+}
 let uiLogInPanelShow = () => {
     let logInShow = document.querySelector('.uiLogInPanelHide').className = '.uiLogIn';
 }
 
-const checkLogin = () => {
-    const valueLogin = document.querySelector('.login').value;
-    Object.keys(data).forEach(user => {
+// const checkLogin = () => {
+//     const valueLogin = document.querySelector('.login').value;
+//     Object.keys(data).forEach(user => {
         
-        let name = user
-        Object.keys(name).forEach(pass => {
+//         let name = user
+//         Object.keys(name).forEach(pass => {
 
-        })
-        console.log(data.name)  
-        console.log(typeof name)
-        console.log(name.password)
-        valueLogin === name
-        ? showStatus(valueLogin) : console.log('Login nieprawidłowy');
-            // console.log(valueLogin)
+//         })
+//         console.log(data.name)  
+//         console.log(typeof name)
+//         console.log(name.password)
+//         valueLogin === name
+//         ? showStatus(valueLogin) : console.log('Login nieprawidłowy');
+//             // console.log(valueLogin)
            
-         return name
+//          return name
         
-    }) 
-}
+//     }) 
+// }
 
-const checkPassword = (n) => {
-    const valuePassword = document.querySelector('.password').value;
-        console.log(n.password)
-    // valuePassword === `${data.user1.password}`
-    //  ? showStatus(valuePassword) : console.log('Hasło nieprawidłowe');
-    //  console.log(valuePassword);
-}
+// const checkPassword = (n) => {
+//     const valuePassword = document.querySelector('.password').value;
+//         console.log(n.password)
+//     // valuePassword === `${data.user1.password}`
+//     //  ? showStatus(valuePassword) : console.log('Hasło nieprawidłowe');
+//     //  console.log(valuePassword);
+// }
 
 
 

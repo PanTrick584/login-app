@@ -13,17 +13,16 @@
 
     <main>
         <section>
-            <div class="buttonContainer" >
-                <div >
-                    <button class="buttonSignLog" >
+            <div  class="buttonContainer" >
+                    <button onclick="uiSignUpPanelShow()" class="buttonSignUp" >
                         <h1>Sign Up!</h1>
                         <p>For more info of our products Sign in to your account.</p>
                     </button>
-                </div>
-                <button onclick="uiLogInPanelShow()" class="buttonLogIn" >
-                    <h1>Log In!</h1>
-                    <p>If you haven't one yet, check out for log in to check our offer and stay together longer</p>
-                </button>
+
+                    <button onclick="uiLogInPanelShow()" class="buttonLogIn" >
+                        <h1>Log In!</h1>
+                        <p>If you haven't one yet, check out for log in to check our offer and stay together longer</p>
+                    </button>
             </div>
             
         </section>
@@ -33,22 +32,22 @@
 
                 <div class='uiSignUpPanelHide'>
                     <div class="uiSignUp" >
-                        <input value="Nick Name" onclick="inputChange()"></input>
-                        <input value="Email" onclick="inputChange()"></input>
-                        <input value="Password"></input>
-                        <input value="Password Werify"></input>
-                        <input value="Country"></input>
-                        <input value="Gender"></input>
-                        <input value="Age"></input>
-                        <input value="Reptilian Parents"></input>
+                        <input class="uiSignUpInput" value="Nick Name"></input>
+                        <input class="uiSignUpInput" value="Email" ></input>
+                        <input class="uiSignUpInput" value="Password"></input>
+                        <input class="uiSignUpInput" value="Password Werify"></input>
+                        <input class="uiSignUpInput" value="Country"></input>
+                        <input class="uiSignUpInput" value="Gender"></input>
+                        <input class="uiSignUpInput" value="Age"></input>
+                        <input class="uiSignUpInput" value="Reptilian Parents"></input>
                         <button class="loginButton" onclick="checkLogin()">Sign Up!</button>
                     </div>
                 </div>
             <div class='uiLogInPanelHide'>
                 <div class="uiLogIn">
-                    <input value="Nick Name"></input>
-                    <input value="Email"></input>
-                    <input value="Password"></input>
+                    <input class="uiSignUpInput" value="Nick Name"></input>
+                    <input class="uiSignUpInput" value="Email"></input>
+                    <input class="uiSignUpInput" value="Password"></input>
                     <button class="loginButton" onclick="checkLogin()">Log In</button>  
                 </div>
             </div>
