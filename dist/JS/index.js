@@ -35,29 +35,20 @@ const data = {
 
 // } // pomysł na zmienianie tła w gradiencie, dopracować i będzie działaś, jakąś pętlę trzeba zrobić
 
-
-// let input = document.querySelectorAll('input');
-// console.log(input)
-const inputs = document.querySelectorAll('input');
-
-
-let inputChange = () => {
-    // console.log(input.className)
-    input.className ;
-}
-
 const addEventListenerToInputs =(event) => {
-    
+
+    const inputs = document.querySelectorAll('input');
+
     for (let i = 0, len = inputs.length; i < len; i++) {
+
        
         const input = inputs[i]
         const prevInputValue = input.value
+        console.log(prevInputValue)
         console.log(input)
-        input.addEventListener(event, () => {input.focus ? input.value = "" : console.log('duno?')}, false);
-        // input.addEventListener('mouseout', () => {input.value = "" ? prevInputValue : console.log('cośwymyśle')}, false)
+        input.addEventListener(event, () => {input.focus ? input.value = "" : input.value = prevInputValue}, false);
+        input.value === "" ? input.value = prevInputValue : input.value
     }
-
-
 }
 
 addEventListenerToInputs('focus'); 
@@ -66,45 +57,29 @@ addEventListenerToInputs('focus');
 
 
 
-
-
-// Menu wyświetlania inputów
-// let buttonSignLog = document.querySelector('.buttonSignLog');
-// let uiSignUpPanelShow = () => {
-    
-//     let buttonLogIn = document.querySelector('.buttonLogIn')
-//     let signUpShow = document.querySelector('.uiSignUpPanelHide')
-//     let logInShow = document.querySelector('.uiLogInPanelHide')
-
-//     let signUpChange = () => {
-//         signUpShow.className = '.uiSignUp';
-//         console.log(2)
-//     }
-//     return signUpChange()
-// }
-// buttonSignLog.addEventListener(onclick, signUpChange(), false)
-
-
-// const inputValueChange = () => {
-//     let inputs = document.querySelectorAll('input').forEach(inp = () => {
-    
-//         let input = inp;
-//         input.value = '';
-//         console.log(input)
-//         return input
-    
-//     })
-// input.addEventListener("click", inputs(), false);
-// }
-
 // This one works but its not enough
 
-let uiSignUpPanelShow = () => {
-    let signUpSow = document.querySelector('.uiSignUpPanelHide').className = '.uiSignUp';
+const uiSignUpPanelShow = () => {
+    const signUpShow = document.querySelector('.uiSignUpPanelHide');
+    console.log(signUpShow.className)
+    const signUpButton = document.querySelector('.buttonSignUp')
+    signUpButton.addEventListener('click', () => {signUpShow.style.display === "none" ? signUpShow.className = '.uiSignUp' : signUpShow.className = '.uiSignUpPanelHide'}, false)
 }
-let uiLogInPanelShow = () => {
-    let logInShow = document.querySelector('.uiLogInPanelHide').className = '.uiLogIn';
+
+uiSignUpPanelShow();
+
+const uiLogInPanelShow = () => {
+    const logInShow = document.querySelector('.uiLogInPanelHide');
+    const logInButton = document.querySelector('.buttonLogIn')
+    logInButton.addEventListener('click', () => {logInShow.className === ".uiLogInPanelHide" ? logInShow.className = '.uiLogIn' : logInShow.className = '.uiLogInPanelHide'}, false)
 }
+
+uiLogInPanelShow();
+
+// There is no go back in displaying containers
+
+
+// Validating inputs
 
 // const checkLogin = () => {
 //     const valueLogin = document.querySelector('.login').value;
