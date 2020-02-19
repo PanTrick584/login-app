@@ -1,19 +1,36 @@
-const data = {};
-
+const data = {
+    accounts: [
+        {
+            name: 'Andrzej',
+            email: 'andrzej.dupa@hotmail.com',
+            password: 'LubiePlacki666'
+        },
+        {
+            name: 'Weronika',
+            email: 'weronka.jelonka@hotmail.com',
+            password: 'dziuniaWera'
+        },
+        {
+            name: 'qwerty',
+            email: 'thiaon@mail.com',
+            password: 'haslo1234'
+        },
+        {
+            name: 'Magiczny___Krzysztof',
+            email: 'czarodziej.kristofer@nibylandia.com',
+            password: 'MagicznyKrzysztof69'
+        },
+    ]
+};
 
 const addEventListenerToInputs =(event) => {
 
     const inputs = document.querySelectorAll('input');
 
-    for (let i = 0, len = inputs.length; i < len; i++) {
+    inputs.forEach(function(input){
+        input.addEventListener(event, ()=> input.click ? input.value = "" : input.value)
+    })
 
-        const input = inputs[i]
-        const prevInputValue = input.value
-        console.log(prevInputValue)
-        console.log(input)
-        input.addEventListener(event, () => input.focus ? input.value = "" : input.value = prevInputValue, false);
-        input.addEventListener(event, () => value === "" ? input.value = prevInputValue : input.value)  
-    }
 }
 
 addEventListenerToInputs('click'); 
@@ -22,7 +39,7 @@ addEventListenerToInputs('click');
 
 
 
-// This one works but its not enough
+// SWITHING BUTTONS
 
 var logInShow = document.querySelector('.uiLogIn');
 var signUpShow = document.querySelector('.uiSignUp');
@@ -50,51 +67,28 @@ const uiSignUpPanelShow = (signUpShow) => {
 
 uiSignUpPanelShow(signUpShow);
 
+// LOGIN AREA
 
+const checkAccount = () => {
+    data.accounts.forEach((user) => {
 
+        console.log(user.name)
 
-// There is no go back in displaying containers
+        let logInName = document.querySelector('#uiLogInName');
+        let logInEmail = document.querySelector('#uiLogInEmail');
+        let logInPassword = document.querySelector('#uiLogInPassword');
 
+        // console.log(logInName.value)
+        user.name === logInName.value && user.email === logInEmail.value && user.password === logInPassword.value ? window.location.href = "dist/userAccount/userAccount.html" : console.log('nie ma cie...')
 
-// Validating inputs
-
-// const checkLogin = () => {
-//     const valueLogin = document.querySelector('.login').value;
-//     Object.keys(data).forEach(user => {
-        
-//         let name = user
-//         Object.keys(name).forEach(pass => {
-
-//         })
-//         console.log(data.name)  
-//         console.log(typeof name)
-//         console.log(name.password)
-//         valueLogin === name
-//         ? showStatus(valueLogin) : console.log('Login nieprawidłowy');
-//             // console.log(valueLogin)
-           
-//          return name
-        
-//     }) 
-// }
-
-// const checkPassword = (n) => {
-//     const valuePassword = document.querySelector('.password').value;
-//         console.log(n.password)
-//     // valuePassword === `${data.user1.password}`
-//     //  ? showStatus(valuePassword) : console.log('Hasło nieprawidłowe');
-//     //  console.log(valuePassword);
-// }
-
-
-
-const loggedIn = () => {
-    
-    window.location.href = "dist/userAccount/userAccount.html"
+    })
 }
 
-const showStatus = (valueP, valueL) => {
-    const status = '! Whait a moment...';
-    console.log(`${data.messege} ${name} ${status}`);
-    valueP && valueL ?  loggedIn() : "";
+const createAccount = () => {
+        const inputsGrab = document.querySelectorAll('.uiSignUp input')
+        inputsGrab.forEach((inp)=>{
+            console.log(inp.value)
+        })
+
+        
 }
