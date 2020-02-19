@@ -1,39 +1,5 @@
-const data = {
-    Andrzej: {
-        password: 'LubiePlacki11',
-        age: 76,
-        adress: "Żagań"
-    },
-    Grzegorz: {
-        password: 'DoktorCyckarz69',
-        age: 36,
-        adress: "Lublin albo Dublin"
-    },
-    user3: {
-        password: "Haslo1234",
-        age: "none",
-        adress: "Internet"
-    },
-    Wacław: {
-        password: 'dupadupadupa666',
-        age: 12,
-        adress: 'Stummilowy Las'
-    },
+const data = {};
 
-    messege: "Witaj "
-}
-
-// const backgroundGradient = () => {
-//     setTimeout(colorChanger(), 5000)
-// }
-
-// const colorChanger = () => {
-//     let backgroundColor = document.querySelector("body").style.backgroundImage = 'linear-gradient(to right, #996b43, #998574, #d1680d)';
-//     let backgroundColor = document.querySelector("body").style.backgroundImage = 'linear-gradient(to right, #998574, #d1680d, #996b43)';
-//     let backgroundColor = document.querySelector("body").style.backgroundImage = 'linear-gradient(to right, #d1680d, #996b43, #998574)';
-
-
-// } // pomysł na zmienianie tła w gradiencie, dopracować i będzie działaś, jakąś pętlę trzeba zrobić
 
 const addEventListenerToInputs =(event) => {
 
@@ -41,17 +7,16 @@ const addEventListenerToInputs =(event) => {
 
     for (let i = 0, len = inputs.length; i < len; i++) {
 
-       
         const input = inputs[i]
         const prevInputValue = input.value
         console.log(prevInputValue)
         console.log(input)
-        input.addEventListener(event, () => {input.focus ? input.value = "" : input.value = prevInputValue}, false);
-        input.value === "" ? input.value = prevInputValue : input.value
+        input.addEventListener(event, () => input.focus ? input.value = "" : input.value = prevInputValue, false);
+        input.addEventListener(event, () => value === "" ? input.value = prevInputValue : input.value)  
     }
 }
 
-addEventListenerToInputs('focus'); 
+addEventListenerToInputs('click'); 
 
 // all buttons are working, but value of button isn't back so there is empty input if there is no valid value
 
@@ -59,22 +24,34 @@ addEventListenerToInputs('focus');
 
 // This one works but its not enough
 
-const uiSignUpPanelShow = () => {
-    const signUpShow = document.querySelector('.uiSignUpPanelHide');
-    console.log(signUpShow.className)
-    const signUpButton = document.querySelector('.buttonSignUp')
-    signUpButton.addEventListener('click', () => {signUpShow.style.display === "none" ? signUpShow.className = '.uiSignUp' : signUpShow.className = '.uiSignUpPanelHide'}, false)
+var logInShow = document.querySelector('.uiLogIn');
+var signUpShow = document.querySelector('.uiSignUp');
+
+const hidePanel = () => {
+    logInShow.style.display = 'none';
+    signUpShow.style.display = 'none';
 }
 
-uiSignUpPanelShow();
-
-const uiLogInPanelShow = () => {
-    const logInShow = document.querySelector('.uiLogInPanelHide');
-    const logInButton = document.querySelector('.buttonLogIn')
-    logInButton.addEventListener('click', () => {logInShow.className === ".uiLogInPanelHide" ? logInShow.className = '.uiLogIn' : logInShow.className = '.uiLogInPanelHide'}, false)
+const uiLogInPanelShow = (logInShow) => {
+    
+    const buttonLogIn = document.querySelector('.buttonLogIn')
+    buttonLogIn.addEventListener('click', () => {
+        logInShow.style.display === 'none' ? logInShow.style.display = 'flex': logInShow.style.display = 'none'}, false)
 }
 
-uiLogInPanelShow();
+uiLogInPanelShow(logInShow);
+
+const uiSignUpPanelShow = (signUpShow) => {
+
+    const buttonSignUp = document.querySelector('.buttonSignUp')
+    buttonSignUp.addEventListener('click', () => {
+        signUpShow.style.display === "none" ? signUpShow.style.display = 'flex' : signUpShow.style.display = 'none'}, false)
+}
+
+uiSignUpPanelShow(signUpShow);
+
+
+
 
 // There is no go back in displaying containers
 

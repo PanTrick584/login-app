@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="dist/CSS/style.css" />
     <title>Document</title>
 </head>
-<body>
+<body onload="hidePanel()">
     <header>
         <h1>Welcome</h1>
     </header>
@@ -30,7 +30,7 @@
         <section>
             <div class="uiPanel">
 
-                <div class='uiSignUpPanelHide'>
+                <div>
                     <div class="uiSignUp" >
                         <input value="Nick Name"></input>
                         <input value="Email" ></input>
@@ -43,8 +43,8 @@
                         <button class="loginButton" onclick="checkLogin()">Sign Up!</button>
                     </div>
                 </div>
-                <div class='uiLogInPanelHide'>
-                    <div class="uiLogIn">
+                <div >
+                    <div class='uiLogIn' >
                         <input class="uiSignUpInput" value="Nick Name"></input>
                         <input class="uiSignUpInput" value="Email"></input>
                         <input class="uiSignUpInput" value="Password"></input>
