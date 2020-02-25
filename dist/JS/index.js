@@ -33,7 +33,7 @@ const addEventListenerToInputs =(event) => {
 
 }
 
-addEventListenerToInputs('click'); 
+addEventListenerToInputs('click');
 
 // all buttons are working, but value of button isn't back so there is empty input if there is no valid value
 
@@ -84,11 +84,66 @@ const checkAccount = () => {
     })
 }
 
-const createAccount = () => {
-        const inputsGrab = document.querySelectorAll('.uiSignUp input')
-        inputsGrab.forEach((inp)=>{
-            console.log(inp.value)
-        })
+// CREATE ACCOUNT
 
-        
+
+function getter() {
+    fetch("http://localhost:3000/users")
+    .then((rep) => {
+       return rep.json()
+    })
+    .then(data => {
+        output(data)
+        console.log(data)
+    })
 }
+
+function createAccount() {
+
+    // const clickToCreate = document.querySelector('.signUpButton')
+    // clickToCreate.addEventListener('click', ()=> console.log("working"))
+    function inputsCreateAccount(){
+        let input = document.querySelectorAll('.uiSignUp input').forEach((item, index, arr)=>{
+            let id = index;
+            let arrayAccount = arr
+            console.log(item.value)
+            console.log(index)
+            console.log(item.value + index)
+            console.log(id)
+            console.log(arr[0].value)
+        })
+        return arrayAccount
+    } 
+    // let sending = (arr) => {
+        
+    //     fetch("http://localhost:3000/user", {
+    //         method:'POST',
+    //         headers:{
+    //             'Content-type': "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             first: arr[0].value,
+    //             email: arr[1].value,
+    //             password: arr[2].value,
+    //             passwordRep: arr[3].value,
+    //             country: arr[4].value,
+    //             gender: arr[5].value,
+    //             age: arr[6].value,
+    //             parents: arr[7].value
+
+    //         }),   
+    //     })
+    //     .then((response) => {
+    //         return response.text()
+    //     })
+    //     .then((data) => {
+    //         console.log(data)
+    //         getter()
+    //     })
+    // }
+
+    // sending(arrayAccount)
+    
+    inputsCreateAccount()
+}
+

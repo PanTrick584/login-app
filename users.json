@@ -1,0 +1,15 @@
+{
+  "user": [
+    {
+      "first": "Nick Name",
+      "email": "Email",
+      "password": "Password",
+      "passwordRep": "Password Werify",
+      "country": "Country",
+      "gender": "Gender",
+      "age": "Age",
+      "parents": "Reptilian Parents",
+      "id": 1
+    }
+  ]
+}
