@@ -10,6 +10,28 @@
       "age": "Age",
       "parents": "Reptilian Parents",
       "id": 1
+    },
+    {
+      "first": "Patyrk",
+      "email": "chodacki.pc@gmail.com",
+      "password": "gospodarka",
+      "passwordRep": "gospodarka",
+      "country": "Polska",
+      "gender": "Méæczyznz",
+      "age": "28",
+      "parents": "true",
+      "id": 2
+    },
+    {
+      "first": "Nick Name",
+      "email": "Email",
+      "password": "dupa",
+      "passwordRep": "dupa",
+      "country": "Country",
+      "gender": "Gender",
+      "age": "Age",
+      "parents": "Reptilian Parents",
+      "id": 3
     }
   ]
 }

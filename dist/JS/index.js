@@ -100,50 +100,40 @@ function getter() {
 
 function createAccount() {
 
-    // const clickToCreate = document.querySelector('.signUpButton')
-    // clickToCreate.addEventListener('click', ()=> console.log("working"))
-    function inputsCreateAccount(){
-        let input = document.querySelectorAll('.uiSignUp input').forEach((item, index, arr)=>{
-            let id = index;
-            let arrayAccount = arr
-            console.log(item.value)
-            console.log(index)
-            console.log(item.value + index)
-            console.log(id)
-            console.log(arr[0].value)
-        })
-        return arrayAccount
-    } 
-    // let sending = (arr) => {
+    let input = document.querySelectorAll('.uiSignUp input')
+
+    const accountElements = Array.from(input)
+    console.log(accountElements)
+
+
+    let sending = (accountElements) => {
         
-    //     fetch("http://localhost:3000/user", {
-    //         method:'POST',
-    //         headers:{
-    //             'Content-type': "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             first: arr[0].value,
-    //             email: arr[1].value,
-    //             password: arr[2].value,
-    //             passwordRep: arr[3].value,
-    //             country: arr[4].value,
-    //             gender: arr[5].value,
-    //             age: arr[6].value,
-    //             parents: arr[7].value
-
-    //         }),   
-    //     })
-    //     .then((response) => {
-    //         return response.text()
-    //     })
-    //     .then((data) => {
-    //         console.log(data)
-    //         getter()
-    //     })
-    // }
-
-    // sending(arrayAccount)
+            fetch("http://localhost:3000/user", {
+                method:'POST',
+                headers:{
+                    'Content-type': "application/json"
+                },
+                body: JSON.stringify({
+                    first: accountElements[0].value,
+                    email: accountElements[1].value,
+                    password: accountElements[2].value,
+                    passwordRep: accountElements[3].value,
+                    country: accountElements[4].value,
+                    gender: accountElements[5].value,
+                    age: accountElements[6].value,
+                    parents: accountElements[7].value
     
-    inputsCreateAccount()
+                }),   
+            })
+            .then((response) => {
+                return response.text()
+            })
+            .then((data) => {
+                console.log(data)
+                getter()
+            })
+        }
+       
+        accountElements[2].value === accountElements[3].value ?  sending(accountElements) : console.log("Hasła różnią się")
+        
 }
-
