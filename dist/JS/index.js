@@ -1,44 +1,3 @@
-const data = {
-    accounts: [
-        {
-            name: 'Andrzej',
-            email: 'andrzej.dupa@hotmail.com',
-            password: 'LubiePlacki666'
-        },
-        {
-            name: 'Weronika',
-            email: 'weronka.jelonka@hotmail.com',
-            password: 'dziuniaWera'
-        },
-        {
-            name: 'qwerty',
-            email: 'thiaon@mail.com',
-            password: 'haslo1234'
-        },
-        {
-            name: 'Magiczny___Krzysztof',
-            email: 'czarodziej.kristofer@nibylandia.com',
-            password: 'MagicznyKrzysztof69'
-        },
-    ]
-};
-
-const addEventListenerToInputs =(event) => {
-
-    const inputs = document.querySelectorAll('input');
-
-    inputs.forEach(function(input){
-        input.addEventListener(event, ()=> input.click ? input.value = "" : input.value)
-    })
-
-}
-
-addEventListenerToInputs('click');
-
-// all buttons are working, but value of button isn't back so there is empty input if there is no valid value
-
-
-
 // SWITHING BUTTONS
 
 var logInShow = document.querySelector('.uiLogIn');
@@ -70,30 +29,50 @@ uiSignUpPanelShow(signUpShow);
 // LOGIN AREA
 
 const checkAccount = () => {
-    data.accounts.forEach((user) => {
 
-        console.log(user.name)
+    // const logInEmail = document.querySelector('#uiLogInEmail')
+    // const logInPassword = document.querySelector('#uiLogInPassword')
+    
+    function checker(data) {
 
-        let logInName = document.querySelector('#uiLogInName');
+        data.forEach((user) => {
+
+        console.log(user)
+
         let logInEmail = document.querySelector('#uiLogInEmail');
         let logInPassword = document.querySelector('#uiLogInPassword');
+        let sectionAppear = document.querySelector('.accountNone')
 
-        // console.log(logInName.value)
-        user.name === logInName.value && user.email === logInEmail.value && user.password === logInPassword.value ? window.location.href = "dist/userAccount/userAccount.html" : console.log('nie ma cie...')
+        console.log(logInEmail.value)
+        user.email === logInEmail.value && user.password === logInPassword.value ? sectionAppear.className = 'accountYup' : console.log('nie ma cie...')
 
     })
-}
+
+        // data.email.value === logInEmail.value && data.password.value === logInPassword.value ? console.log('Zalogowany') : console.log('Błędne dane')
+    }
+
+    fetch("http://localhost:3000/user")
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data[0])
+                checker(data)
+            })
+        }
+
+
+        
 
 // CREATE ACCOUNT
 
 
 function getter() {
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3000/user")
     .then((rep) => {
        return rep.json()
     })
     .then(data => {
-        output(data)
         console.log(data)
     })
 }
@@ -108,23 +87,20 @@ function createAccount() {
 
     let sending = (accountElements) => {
         
-            fetch("http://localhost:3000/user", {
-                method:'POST',
-                headers:{
-                    'Content-type': "application/json"
-                },
-                body: JSON.stringify({
-                    first: accountElements[0].value,
-                    email: accountElements[1].value,
-                    password: accountElements[2].value,
-                    passwordRep: accountElements[3].value,
-                    country: accountElements[4].value,
-                    gender: accountElements[5].value,
-                    age: accountElements[6].value,
-                    parents: accountElements[7].value
+        fetch("http://localhost:3000/user", {
+            method:'POST',
+            headers:{
+                'Content-type': "application/json"
+            },
+            body: JSON.stringify({
+                first: accountElements[0].value,
+                last: accountElements[1].value,
+                email: accountElements[2].value,
+                password: accountElements[3].value,
+                passwordRep: accountElements[4].value,
     
-                }),   
-            })
+            }),   
+        })
             .then((response) => {
                 return response.text()
             })
@@ -134,6 +110,6 @@ function createAccount() {
             })
         }
        
-        accountElements[2].value === accountElements[3].value ?  sending(accountElements) : console.log("Hasła różnią się")
+    accountElements[3].value === accountElements[4].value ?  sending(accountElements) : console.log("Hasła różnią się")
         
 }

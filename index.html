@@ -32,22 +32,53 @@
 
                 <div>
                     <div class="uiSignUp" >
-                        <input  name="Nick Name" value="Nick Name"></input>
-                        <input  value="Email" ></input>
-                        <input  value="Password"></input>
-                        <input  value="Password Werify"></input>
-                        <input  value="Country"></input>
-                        <input  value="Gender"></input>
-                        <input  value="Age"></input>
-                        <input  value="Reptilian Parents"></input>
+                        <div class="uiSignUp-input-handler">
+                            <label for="">First Name
+                                <input type="text" name="First Name"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
+                        <div class="uiSignUp-input-handler">
+                            <label for="">Last Name
+                                <input type="text" name="Last Name"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
+                        <div class="uiSignUp-input-handler">
+                            <label for="">Email
+                                <input type="email" name="Email"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
+                        <div class="uiSignUp-input-handler">
+                            <label for="">Password
+                                <input type="password" name="Password"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
+                        <div class="uiSignUp-input-handler">
+                            <label for="">Password Werify
+                                <input type="password" name="Password Werify"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
                         <button class="signUpButton" onclick="createAccount()">Sign Up!</button>
                     </div>
                 </div>
                 <div >
                     <div class='uiLogIn' >
-                        <input id="uiLogInName" value="Nick Name"></input>
-                        <input id="uiLogInEmail" value="Email"></input>
-                        <input id="uiLogInPassword" value="Password"></input>
+                        <div class="uiLogIn-input-handler">
+                            <label > Email
+                                <input type="email" id="uiLogInEmail" name="Email"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
+                        <div class="uiLogIn-input-handler">
+                            <label >Password
+                                <input type="password" id="uiLogInPassword" name="password"></input>
+                            </label>
+                            <span class="helper-text"></span>
+                        </div>
                         <button class="loginButton" onclick="checkAccount()">Log In</button>  
                     </div>
                 </div>
@@ -55,19 +86,11 @@
             </div>
 
         </section>
-        
-        
-<!--         
-        <div class="loginContainer" >
-            <div class="loginText" >LOGIN :</div>
-            <input class="login" />
-        </div>
-        <div class="passwordContainer" >
-            <div class="passwordText" >Hasło:</div>
-            <input class='password' tyle="text" />
-        </div> -->
-
-
+        <section class="accountNone">
+            <h1>GRATULACJE! ZOSTAŁEŚ ZALOGOWANY</h1>
+            <h2>Informacje o koncie</h2>
+            <button id="refresh" onClick="window.location.href=window.location.href">Log OUT</button>
+        </section>
 
     </main>
 

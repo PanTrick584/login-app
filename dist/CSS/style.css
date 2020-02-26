@@ -191,19 +191,28 @@ main {
 .passwordContainer {
     display: flex;
 }
-/* 
-.password {
-
-} */
 
 
-/* USER PANEL */
-/* 
-.userPanelHide {
-    display: none
+/* SECTION ACCOUNT  */
+
+
+.accountNone {
+    display: none;
+    
 }
 
-.userPanelShow {
+.accountYup {
     display: flex;
     flex-direction: column;
-} */
+    font-size: 3rem;
+    font-weight: bold;
+    justify-content: center;
+
+}
+
+#refresh {
+    height: 80px;
+    width: 80px;
+    color: black;
+    background-color: rgba(255, 124, 110, 0.4);
+}
