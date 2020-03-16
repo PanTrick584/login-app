@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="dist/CSS/style.css" />
     <title>Document</title>
 </head>
-<body onload="hidePanel()">
+<body>
     <header>
         <h1>Welcome</h1>
     </header>
@@ -16,12 +16,12 @@
             <div  class="buttonContainer" >
                     <button class="buttonSignUp" >
                         <h1>Sign Up!</h1>
-                        <p>For more info of our products Sign in to your account.</p>
+                        <p></p>
                     </button>
 
                     <button class="buttonLogIn" >
                         <h1>Log In!</h1>
-                        <p>If you haven't one yet, check out for log in to check our offer and stay together longer</p>
+                        <p></p>
                     </button>
             </div>
             
@@ -30,71 +30,69 @@
         <section>
             <div class="uiPanel">
 
-                <div>
+               <form id="form">
                     <div class="uiSignUp" >
                         <div class="uiSignUp-input-handler">
-                            <label for="">First Name
-                                <input type="text" name="First Name" placeholder="Name"></input>
-                            </label>
+                            <label for="">First Name</label>
+                            <input type="text" id="first-name" placeholder="Name"></input>
                             <span class="helper-text"></span>
                         </div>
                         <div class="uiSignUp-input-handler">
-                            <label for="">Last Name
-                                <input type="text" name="Last Name" placeholder="Last Name"></input>
-                            </label>
+                            <label for="">Last Name</label>
+                            <input type="text" id="last-name" placeholder="Last Name"></input>
                             <span class="helper-text"></span>
                         </div>
                         <div class="uiSignUp-input-handler">
-                            <label for="">Email
-                                <input type="email" name="Email" placeholder="Email"></input>
-                            </label>
+                            <label for="">Email</label>
+                            <input type="email" id="email" placeholder="Email"></input>
                             <span class="helper-text"></span>
                         </div>
                         <div class="uiSignUp-input-handler">
-                            <label for="">Password
-                                <input type="password" name="Password" placeholder="Password"></input>
-                            </label>
+                            <label for="">Password</label>
+                            <input type="password" id="password" placeholder="Password"></input>
                             <span class="helper-text"></span>
                         </div>
                         <div class="uiSignUp-input-handler">
-                            <label for="">Password Werify
-                                <input type="password" name="Password Werify"></input>
-                            </label>
+                            <label for="">Password Werify</label>
+                            <input type="password" id="password-werify"></input>
                             <span class="helper-text"></span>
                         </div>
-                        <button class="signUpButton" onclick="createAccount()">Sign Up!</button>
+                        <div class="button-handler">
+                            <button class="signUpButton">Sign Up!</button>
+                        </div>
                     </div>
-                </div>
-                <div >
+                </form>
+               
+                <form>
                     <div class='uiLogIn' >
                         <div class="uiLogIn-input-handler">
-                            <label > Email
-                                <input type="email" id="uiLogInEmail" name="Email"></input>
-                            </label>
+                            <label >Email</label>
+                            <input type="email" id="uiLogInEmail" name="Email" placeholder="Email"></input>
                             <span class="helper-text"></span>
                         </div>
                         <div class="uiLogIn-input-handler">
-                            <label >Password
-                                <input type="password" id="uiLogInPassword" name="password" placeholder="Password"></input>
-                            </label>
+                            <label >Password</label>
+                            <input type="password" id="uiLogInPassword" name="password" placeholder="Password"></input>
                             <span class="helper-text"></span>
                         </div>
-                        <button class="loginButton" onclick="checkAccount()">Log In</button>  
+                        <div class="button-handler"></div>
+                        <button class="loginButton">Log In</button>  
                     </div>
-                </div>
+                </form>
                    
             </div>
 
         </section>
-        <section class="accountNone">
-            <h1>GRATULACJE! ZOSTAŁEŚ ZALOGOWANY</h1>
-            <h2>Informacje o koncie</h2>
-            <button id="refresh" onClick="window.location.href=window.location.href">Log OUT</button>
-        </section>
 
     </main>
 
-    <footer>
+    <section class="accountNone">
+        <h1>GRATULACJE! ZOSTAŁEŚ ZALOGOWANY</h1>
+        <h2 id="accountData"></h2>
+        <button id="refresh" onClick="window.location.href=window.location.href">Log OUT</button>
+    </section>
+
+    <!-- <footer>
         <section>
             <div class="aboutContainer">
                 <h1>About our company:</h1>
@@ -104,7 +102,7 @@
         <section>
             Fontello Content
         </section>
-    </footer>
+    </footer> -->
 
 
     <script src="dist/JS/index.js" ></script>

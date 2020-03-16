@@ -1,218 +1,141 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+*{
     box-sizing: border-box;
-    background-image: linear-gradient(to right, #d1680d, #996b43, #998574);
 }
 
+:root{
+    --dark-gray: #1a1917;
+    --light-gray: #9c9c9c;
+}
 
-
-/* HEADER */
-
-header{
-    display:flex;
+body{
+    background-color: var(--dark-gray);
+    font-family: "Roboto", sans-serif;
+    display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-header h1{
-    font-size: 6rem;
-}
-
-/* MAIN */
-
-main {
+    justify-content: center;
+    min-height: 100vh;
     margin: 0;
-    width: 100%;
 }
 
 
-/* Main buttons */
+/* Main */
+
+main{
+    padding: 20px;
+    background-color: var(--light-gray);
+    border-radius: 15px;
+
+}
+
+/* Panel Buttons */
 
 .buttonContainer{
-    display:flex;
+    margin: 10px;
+}
+
+.buttonSignUp{
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    width: 300px;
+    cursor: pointer;
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+}
+
+
+.buttonLogIn{
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    width: 300px;
+    cursor: pointer;
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+
+}
+
+/* User Panel */
+
+.uiPanel {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* align-content: center; */
+    /* justify-content: center; */
     width: 100%;
 }
 
-/* Button SignUp */
-
-.buttonSignUp{
-    width: 250px;
-    height: 200px;
-    padding: 30px;
-    margin: 0 10px;
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    background: rgba(255, 124, 110, 0.4);
-    cursor: pointer;
-}
-
-.buttonSignUp:hover{
-    background: rgba(255, 124, 110, 0.6);
-}
-.buttonSignUp:focus{
-    background: rgba(255, 124, 110, 0.2);
-}
-
-.buttonSignUp h1{
-    font-size: 2rem;
-}
-
-.buttonSignLog p {
-    font-size: 0.8rem;
-}
-
-/* Button Log In */
-
-.buttonLogIn{
-    width: 250px;
-    height: 200px;
-    padding: 30px;
-    margin: 0 10px;
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    background: rgba(255, 124, 110, 0.4);
-    cursor: pointer;
-}
-
-.buttonLogIn:hover{
-    background: rgba(255, 124, 110, 0.6);
-}
-.buttonLogIn:focus{
-    background: rgba(255, 124, 110, 0.2);
-}
-
-.buttonLogIn h1{
-    font-size: 2rem;
-}
-
-.buttonLogIn p {
-    font-size: 0.8rem;
-}
-
-/* USER INTERFACE PANEL */
-
-.uiPanel{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-/* Menu Sign Up */
-
-.uiSignUp{
-    display: flex;
+/* UI SIGN UP */
+.uiSignUp {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    margin: 0 10px;
-
+    width: 100%;
 }
 
-.uiSignUp input{
-    margin-bottom: 15px;
-    border-radius: 25px;
-    padding: 0 20px 0 20px;
-    background-color: rgba(255, 124, 110, 0.4);
-    border: none;
-    outline: none;
-    width: 250px;
-    height: 50px;
-    opacity: 0.6;
+.uiSignUp-input-handler{
+    padding: 15px;
+    position: relative;
+}
+
+.uiSignUp-input-handler input{
+    margin: 7px 0 5px 0;
+    height: 30px;
+    border-radius: 5px;
+    display: block;
+}
+.uiSignUp-input-handler label{
     font-size: 1.1rem;
+    display: block;
+}
+.uiSignUp-input-handler span{
+    font-size: 0.8rem;
+    position: absolute;
+}
+.button-handler{
+    margin: 15px;
+}
+.signUpButton{
+    align-self: center;
+    width:100%;
+    padding: 10px;
 }
 
-.uiSignUpInput:hover{
-    background: rgba(255, 124, 110, 0.6);
-}
 
-.uiSignUpInput:focus{
-    background: rgba(255, 124, 110, 0.2);
-    opacity: 1;
-
-}
-
-.uiSignUpPanelHide {
-    display: none;
-}
-
-/* Menu Log In */
-
+/* UI LOG IN */
 .uiLogIn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-
-}
-
-.uiLogIn input{
-    margin-bottom: 15px;
-    border-radius: 25px;
-    padding: 0 20px 0 20px;
-    background-color: rgba(255, 124, 110, 0.4);
-    border: none;
-    outline: none;
-    width: 250px;
-    height: 50px;
-    opacity: 0.6;
-    font-size: 1.1rem;
-}
-
-
-/* FOOTER */
-
-/* Footer about */
-
-.aboutContainer{
-    margin: 100px 150px 50px 150px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.aboutContainer p{
-    
-}
-
-
-/* PASSWORD */
-
-.passwordContainer {
-    display: flex;
-}
-
-
-/* SECTION ACCOUNT  */
-
-
-.accountNone {
     display: none;
-    
-}
-
-.accountYup {
-    display: flex;
     flex-direction: column;
-    font-size: 3rem;
-    font-weight: bold;
-    justify-content: center;
-
+    width: 100%;
+}
+.uiLogIn-input-handler{
+    padding: 15px;
+    /* position: relative; */
+}
+.uiLogIn-input-handler input{
+    display: block;
+    margin: 7px 0 5px 0;
+    height: 30px;
+    border-radius: 5px;
+}
+.uiLogIn-input-handler{
+    display: block;
 }
 
-#refresh {
-    height: 80px;
-    width: 80px;
-    color: black;
-    background-color: rgba(255, 124, 110, 0.4);
+.loginButton{
+    align-self: center;
+    width:100%;
+    padding: 15px;
+    margin-left: 10px;
+}
+
+/* ACCOUNT */
+
+.accountNone{
+    display: none;
+    flex-direction: column;
 }
